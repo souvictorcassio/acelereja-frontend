@@ -21,7 +21,9 @@ export default function InstitutionsList() {
   useEffect(() => {
     async function fetchInstitutions() {
       try {
-        const res = await fetch("http://localhost:3000/api/instituicao");
+        const res = await fetch(
+          "https://acelereja-backend.onrender.com/api/instituicao"
+        );
         if (!res.ok) throw new Error("Erro ao buscar instituições");
         const data = await res.json();
         setInstitutions(data);
@@ -92,7 +94,7 @@ export default function InstitutionsList() {
 
     try {
       const res = await fetch(
-        `http://localhost:3000/api/instituicao/${instituicaoId}/matricular`,
+        `https://acelereja-backend.onrender.com/api/instituicao/${instituicaoId}/matricular`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

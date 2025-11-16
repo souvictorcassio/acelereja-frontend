@@ -31,7 +31,7 @@ export default function InstitutionDashboard() {
     const fetchData = async () => {
       try {
         const res = await fetch(
-          `http://localhost:3000/api/instituicao/${instituicaoId}/dashboard`
+          `https://acelereja-backend.onrender.com/api/instituicao/${instituicaoId}/dashboard`
         );
         const data = await res.json();
 
@@ -54,7 +54,7 @@ export default function InstitutionDashboard() {
   const handleUpdateStatus = async (id, novoStatus) => {
     try {
       await fetch(
-        `http://localhost:3000/api/instituicao/matricula/${id}/status`,
+        `https://acelereja-backend.onrender.com/api/instituicao/matricula/${id}/status`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },

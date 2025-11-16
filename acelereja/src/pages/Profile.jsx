@@ -15,7 +15,9 @@ export default function Profile() {
     async function fetchPerfil() {
       try {
         const res = await fetch(
-          `http://localhost:3000/api/populacao/${user.populacaoId || user.id}`
+          `https://acelereja-backend.onrender.com/api/populacao/${
+            user.populacaoId || user.id
+          }`
         );
         if (!res.ok) throw new Error("Erro ao buscar dados");
         const data = await res.json();
@@ -37,7 +39,7 @@ export default function Profile() {
   const handleSave = async () => {
     try {
       const res = await fetch(
-        `http://localhost:3000/api/populacao/${dados.id}`,
+        `https://acelereja-backend.onrender.com/api/populacao/${dados.id}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },

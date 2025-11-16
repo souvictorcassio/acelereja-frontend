@@ -22,8 +22,8 @@ export default function Register() {
     try {
       const endpoint =
         userType === "populacao"
-          ? "http://localhost:3000/api/populacao/cadastrar"
-          : "http://localhost:3000/api/governo/cadastrar";
+          ? "https://acelereja-backend.onrender.com/api/populacao/cadastrar"
+          : "https://acelereja-backend.onrender.com/api/governo/cadastrar";
 
       const response = await fetch(endpoint, {
         method: "POST",

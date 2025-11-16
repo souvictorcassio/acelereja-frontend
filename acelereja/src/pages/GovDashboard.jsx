@@ -24,7 +24,7 @@ export default function GovDashboard() {
       try {
         if (!user?.id) return;
         const response = await fetch(
-          `http://localhost:3000/api/governo/${user.governoId}/dashboard`
+          `https://acelereja-backend.onrender.com/api/governo/${user.governoId}/dashboard`
         );
         const data = await response.json();
 

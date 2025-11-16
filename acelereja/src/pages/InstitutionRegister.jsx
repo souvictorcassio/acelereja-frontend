@@ -46,7 +46,7 @@ export default function InstitutionRegister() {
       const governoId = user?.tipo === "GOVERNO" ? user.governoId : null;
 
       const response = await fetch(
-        "http://localhost:3000/api/instituicao/cadastrar",
+        "https://acelereja-backend.onrender.com/api/instituicao/cadastrar",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
