@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #f3f4f6;
+}
+
+main {
+  min-height: 80vh;
+}
+
+button {
+  font-family: inherit;
+}

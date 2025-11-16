@@ -1,0 +1,277 @@
+/* 🔹 Estrutura */
+.institution-dashboard-container {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 2rem 1rem;
+}
+
+h2 {
+  text-align: center;
+  color: #1e3a8a;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  text-align: center;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+/* 🔹 Métricas */
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.metric-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.25s ease;
+}
+
+.metric-card:hover {
+  transform: translateY(-5px);
+}
+
+.metric-card h3 {
+  font-size: 2rem;
+  margin-bottom: 0.3rem;
+}
+
+.metric-card p {
+  font-weight: 600;
+  color: #555;
+}
+
+.metric-card.total h3 {
+  color: #1e3a8a;
+}
+.metric-card.pending h3 {
+  color: #f59e0b;
+}
+.metric-card.approved h3 {
+  color: #16a34a;
+}
+.metric-card.denied h3 {
+  color: #dc2626;
+}
+
+/* 🔹 Gráfico */
+.chart-section {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.chart-section h3 {
+  color: #1e3a8a;
+  margin-bottom: 1rem;
+}
+
+/* 🔹 Filtros */
+.filters {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.filters input,
+.filters select {
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+  flex: 1;
+  min-width: 200px;
+}
+
+.filters input:focus,
+.filters select:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+/* 🔹 Tabela */
+.requests-section {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  overflow-x: auto; /* ✅ permite rolagem horizontal */
+  -webkit-overflow-scrolling: touch; /* ✅ rolagem suave em iOS */
+}
+
+.requests-section h3 {
+  color: #1e3a8a;
+  margin-bottom: 1rem;
+}
+
+.requests-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  min-width: 700px; /* ✅ evita quebra feia de layout em telas pequenas */
+}
+
+.requests-table th,
+.requests-table td {
+  padding: 0.8rem;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+  white-space: nowrap; /* ✅ impede quebras de linha forçadas */
+}
+
+.requests-table th {
+  background: #f3f4f6;
+  font-weight: 700;
+}
+
+.status {
+  padding: 0.3rem 0.7rem;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.status.pendente {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.status.deferido,
+.status.deferida {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status.indeferido,
+.status.indeferida {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* 🔹 Botões */
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.approve-btn,
+.deny-btn {
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.approve-btn {
+  background: #16a34a;
+  color: #fff;
+}
+.approve-btn:hover {
+  background: #15803d;
+}
+
+.deny-btn {
+  background: #dc2626;
+  color: #fff;
+}
+.deny-btn:hover {
+  background: #b91c1c;
+}
+
+/* 🔹 Paginação */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.pagination button {
+  padding: 0.5rem 0.9rem;
+  background: #1e3a8a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+
+.pagination button:hover {
+  background: #1d4ed8;
+}
+
+.pagination button:disabled {
+  background: #cbd5e1;
+  cursor: not-allowed;
+}
+
+/* 🔹 Contato */
+.contact-link {
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: none;
+}
+.contact-link:hover {
+  text-decoration: underline;
+}
+
+/* 🔹 Responsividade aprimorada */
+@media (max-width: 768px) {
+  .metrics {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .filters {
+    flex-direction: column;
+  }
+
+  .requests-section {
+    padding: 1rem;
+  }
+
+  .requests-table {
+    font-size: 0.85rem;
+    min-width: 600px; /* ✅ mantém proporção da tabela */
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .requests-section {
+    padding: 0.8rem;
+  }
+
+  .requests-table {
+    min-width: 500px;
+  }
+
+  .approve-btn,
+  .deny-btn {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
+  }
+}

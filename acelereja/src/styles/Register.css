@@ -1,0 +1,134 @@
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f3f4f6;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.register-card {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+}
+
+.register-card h2 {
+  color: #1e3a8a;
+  margin-bottom: 0.5rem;
+}
+
+.register-card p {
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.user-type-selector {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.user-type-selector button {
+  flex: 1;
+  background-color: #e5e7eb;
+  border: none;
+  padding: 0.6rem;
+  border-radius: 8px;
+  margin: 0 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.user-type-selector button.active {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}
+
+.register-form input,
+.register-form select {
+  padding: 0.8rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 100%;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+.register-form select {
+  color: #555;
+}
+
+.btn-submit {
+  background-color: #f97316;
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1.2rem;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+.btn-submit:hover {
+  background-color: #fb923c;
+}
+
+.redirect {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.redirect a {
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+.redirect a:hover {
+  text-decoration: underline;
+}
+
+.form-message {
+  text-align: center;
+  margin-top: 10px;
+  font-weight: 500;
+  color: #4caf50;
+}
+
+.form-message:has(.error) {
+  color: #e53935;
+}
+
+button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 640px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .register-card {
+    padding: 1.5rem;
+  }
+}

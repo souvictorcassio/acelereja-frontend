@@ -1,0 +1,172 @@
+.profile-container {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2rem 1.5rem;
+}
+
+h2 {
+  color: #1e3a8a;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  text-align: center;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.profile-card,
+.enrollment-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+}
+
+.profile-card:hover,
+.enrollment-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.profile-card h3,
+.enrollment-card h3 {
+  color: #1e3a8a;
+  font-size: 1.4rem;
+  margin-bottom: 1.2rem;
+}
+
+.profile-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem 1.5rem;
+}
+
+.profile-info label {
+  display: flex;
+  flex-direction: column;
+  color: #444;
+  font-size: 0.95rem;
+}
+
+.profile-info input {
+  margin-top: 0.3rem;
+  padding: 0.8rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.profile-info input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+.profile-info input:disabled {
+  background-color: #f9fafb;
+  color: #777;
+  cursor: not-allowed;
+}
+
+/* 🔹 Botões */
+.profile-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.btn-edit,
+.btn-save,
+.btn-cancel {
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-edit {
+  background: #1e3a8a;
+  color: #fff;
+}
+
+.btn-edit:hover {
+  background: #2563eb;
+}
+
+.btn-save {
+  background: #16a34a;
+  color: #fff;
+}
+
+.btn-save:hover {
+  background: #22c55e;
+}
+
+.btn-cancel {
+  background: #dc2626;
+  color: #fff;
+}
+
+.btn-cancel:hover {
+  background: #ef4444;
+}
+
+/* 🔹 Matrícula */
+.enrollment-info p {
+  margin: 0.5rem 0;
+  color: #444;
+}
+
+.status {
+  font-weight: 600;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  color: #fff;
+}
+
+.status.pendente {
+  background-color: #f59e0b;
+}
+
+.status.deferido,
+.status.deferida {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status.indeferido,
+.status.indeferida {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.no-enrollment {
+  color: #666;
+  font-style: italic;
+}
+
+/* 🔹 Responsivo */
+@media (max-width: 600px) {
+  .profile-info {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-edit,
+  .btn-save,
+  .btn-cancel {
+    width: 100%;
+  }
+}
