@@ -1,6 +1,7 @@
 // Home.jsx
 import "../styles/Home.css";
 import { useNavigate } from "react-router-dom";
+import studyImg from "../assets/study_together2.png";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -68,10 +69,7 @@ export default function Home() {
             </p>
           </div>
           <div className="image">
-            <img
-              src="/img/study_together.svg"
-              alt="Estudantes felizes estudando"
-            />
+            <img src={studyImg} alt="Estudantes felizes estudando" />
           </div>
         </div>
       </section>
