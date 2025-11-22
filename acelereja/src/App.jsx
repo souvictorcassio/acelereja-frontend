@@ -17,7 +17,7 @@ import InstitutionDashboard from "./pages/InstitutionDashboard";
 import Sobre from "./pages/Sobre";
 import PerguntasFrequentes from "./pages/PerguntasFrequentes";
 import ProtectedRoute from "./components/ProtectedRoute";
-import "./styles/global.css";
+import "./styles/Global.css";
 
 export default function App() {
   return (
