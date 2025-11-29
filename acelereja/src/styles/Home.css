@@ -1,19 +1,12 @@
-/* ===== GERAIS ===== */
 .home-container {
   font-family: "Inter", sans-serif;
-  color: #1f2937;
   background-color: #f9fafb;
-  overflow-x: hidden;
+  color: #1f2937;
 }
 
+/* SEÇÕES */
 section {
-  padding: 4rem 1.5rem;
-}
-
-h1,
-h2,
-h3 {
-  margin-bottom: 1rem;
+  padding: 3.5rem 1.5rem;
 }
 
 /* ===== HERO ===== */
@@ -21,69 +14,85 @@ h3 {
   background: linear-gradient(135deg, #1e3a8a, #3b82f6);
   color: white;
   text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 75vh;
-  padding: 3rem 1.5rem;
+  padding: 5rem 1.5rem 3rem;
+  position: relative;
 }
 
 .hero-content {
-  max-width: 650px;
-  animation: fadeIn 1s ease;
+  max-width: 680px;
+  margin: auto;
 }
 
 .hero h1 {
-  font-size: 2.6rem;
-  line-height: 1.25;
+  font-size: 2.4rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
 }
 
-.hero h1 span {
+.hero span {
   color: #fbbf24;
 }
 
-.hero p {
-  font-size: 1.1rem;
+.hero-sub {
+  font-size: 1.15rem;
+  opacity: 0.9;
   margin-bottom: 2rem;
-  opacity: 0.95;
 }
 
-/* ===== BOTÃO GERAL ===== */
-.cta-btn {
-  background-color: #f97316;
-  color: white;
-  border: none;
-  padding: 0.9rem 2rem;
-  border-radius: 10px;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: 0.3s ease;
+/* Indicador para rolar */
+.scroll-indicator {
+  margin-top: 2rem;
+  font-size: 2rem;
+  opacity: 0.7;
+  animation: bounce 1.5s infinite;
 }
 
-.cta-btn:hover {
-  background-color: #fb923c;
-  transform: translateY(-3px);
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
 }
 
-.cta-btn.large {
-  padding: 1.1rem 2.5rem;
-  font-size: 1.2rem;
-}
-
-/* ===== SOBRE ===== */
-.about {
-  background-color: #fff;
+/* ===== COMO FUNCIONA ===== */
+.how-it-works {
   text-align: center;
 }
 
-.about-content {
-  max-width: 750px;
-  margin: 0 auto;
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.8rem;
+  margin-top: 2rem;
 }
 
-.about-content p {
-  line-height: 1.7;
-  color: #374151;
+.step {
+  background: white;
+  padding: 1.8rem;
+  border-radius: 12px;
+  width: 260px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  transition: 0.3s;
+}
+
+.step:hover {
+  transform: translateY(-5px);
+}
+
+.step-number {
+  display: inline-block;
+  background: #1e3a8a;
+  color: white;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  line-height: 38px;
+  margin-bottom: 0.8rem;
+  font-weight: bold;
 }
 
 /* ===== IMPORTÂNCIA ===== */
@@ -94,114 +103,154 @@ h3 {
 .importance-content {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
   gap: 3rem;
+  justify-content: center;
+  align-items: center;
   max-width: 1100px;
-  margin: 0 auto;
+  margin: auto;
 }
 
 .importance-content .text {
-  flex: 1 1 400px;
-}
-
-.importance-content h2 {
-  color: #1e3a8a;
-}
-
-.importance-content p {
-  line-height: 1.7;
-  color: #374151;
-}
-
-.importance-content .highlight {
-  margin-top: 1rem;
-  color: #1e3a8a;
-  font-weight: 600;
+  flex: 1 1 350px;
 }
 
 .importance-content .image {
   flex: 1 1 350px;
-  text-align: center;
 }
 
-.importance-content img {
-  max-width: 100%;
+.importance img {
+  width: 100%;
   border-radius: 10px;
 }
 
-/* ===== FUNCIONALIDADES ===== */
-.features {
-  background-color: #fff;
+/* ===== BENEFÍCIOS ===== */
+.benefits {
+  text-align: center;
+  background: white;
+}
+
+.benefits-grid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.benefit-card {
+  background: #eef2ff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  font-weight: 600;
+  color: #1e3a8a;
+}
+
+/* ===== NÚMEROS ===== */
+.stats {
+  background: white;
   text-align: center;
 }
 
-.features h2 {
-  color: #1e3a8a;
-  margin-bottom: 2rem;
-}
-
-.features .grid {
+.stats-grid {
+  margin-top: 2rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1.5rem;
-  max-width: 1000px;
-  margin: 0 auto;
 }
 
-.features .card {
-  background-color: #f3f4f6;
+.stat {
+  background: #f3f4f6;
   border-radius: 12px;
-  padding: 2rem;
+  padding: 1.8rem;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
 }
 
-.features .card:hover {
-  transform: translateY(-5px);
-  background-color: #e0e7ff;
-}
-
-.features .card h3 {
+.stat h3 {
   color: #1e3a8a;
-  margin-bottom: 0.8rem;
+  font-size: 1.7rem;
+  margin-bottom: 0.5rem;
 }
 
-/* ===== CHAMADA FINAL ===== */
+/* ===== CTA FINAL ===== */
 .final-cta {
+  text-align: center;
   background: linear-gradient(135deg, #1e40af, #2563eb);
   color: white;
-  text-align: center;
-  padding: 4rem 1.5rem;
+  padding: 3.5rem 1.5rem;
 }
 
-.final-cta h2 {
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
+.cta-btn {
+  background-color: #f97316;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.4rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1.2rem;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
-/* ===== ANIMAÇÃO ===== */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.cta-btn:hover {
+  background-color: #fb923c;
+  transform: translateY(-3px);
+}
+
+.cta-btn.large {
+  width: auto;
+  padding: 1rem 2rem;
+  font-size: 1.15rem;
+}
+
+.side-nav {
+  position: fixed;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 200;
+}
+
+.side-nav-btn {
+  background: #1e3a8a;
+  color: white;
+  border: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.side-nav-btn:hover {
+  background: #2563eb;
+  transform: scale(1.1);
 }
 
 /* ===== RESPONSIVO ===== */
 @media (max-width: 768px) {
   .hero h1 {
-    font-size: 2rem;
+    font-size: 1.9rem;
   }
-  .importance-content {
-    flex-direction: column;
-    text-align: center;
+
+  .steps,
+  .stats-grid {
+    gap: 1rem;
   }
-  .features .grid {
-    gap: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .side-nav {
+    right: 10px;
+    gap: 10px;
+  }
+
+  .side-nav-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
   }
 }

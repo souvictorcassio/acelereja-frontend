@@ -1,4 +1,3 @@
-// Home.jsx
 import "../styles/Home.css";
 import { useNavigate } from "react-router-dom";
 import studyImg from "../assets/study_together2.png";
@@ -6,66 +5,85 @@ import studyImg from "../assets/study_together2.png";
 export default function Home() {
   const navigate = useNavigate();
 
-  const features = [
-    {
-      icon: "👩‍🏫",
-      title: "Governo",
-      text: "Gerencie instituições, vagas e matrículas de forma transparente e eficiente.",
-    },
-    {
-      icon: "🏫",
-      title: "Instituições",
-      text: "Divulgue cursos e vagas disponíveis, receba inscrições e acompanhe o processo em tempo real.",
-    },
-    {
-      icon: "🎓",
-      title: "Estudantes",
-      text: "Encontre vagas perto de você e inscreva-se com apenas alguns cliques.",
-    },
+  const sections = [
+    { id: "hero", label: "🚀" },
+    { id: "how-it-works", label: "1" },
+    { id: "importance", label: "2" },
+    { id: "benefits", label: "3" },
+    { id: "stats", label: "4" },
+    { id: "final-cta", label: "✓" },
   ];
+
+  const scrollToSection = (id) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <main className="home-container">
+      {/* NAVEGAÇÃO LATERAL */}
+      <div className="side-nav">
+        {sections.map((sec) => (
+          <button
+            key={sec.id}
+            className="side-nav-btn"
+            onClick={() => scrollToSection(sec.id)}
+          >
+            {sec.label}
+          </button>
+        ))}
+      </div>
+
       {/* HERO */}
-      <section className="hero">
+      <section id="hero" className="hero">
         <div className="hero-content">
           <h1>
-            Dê um <span>novo passo</span> na sua educação
+            Conclua seus estudos com o <span>EJA</span>
           </h1>
-          <p>
-            O AcelerEJA conecta você às melhores oportunidades para concluir
-            seus estudos e transformar o futuro.
+          <p className="hero-sub">
+            Encontre escolas, consulte vagas e faça sua matrícula online.
           </p>
+
           <button className="cta-btn" onClick={() => navigate("/register")}>
-            Quero voltar a estudar
+            Quero me matricular
           </button>
         </div>
       </section>
 
-      {/* SOBRE */}
-      <section className="about">
-        <div className="about-content">
-          <h2>Como o AcelerEJA te ajuda</h2>
-          <p>
-            O AcelerEJA aproxima governos, instituições e estudantes em uma
-            única plataforma, facilitando o acesso à Educação de Jovens e
-            Adultos. Tudo de forma digital, gratuita e acessível.
-          </p>
+      {/* COMO FUNCIONA */}
+      <section id="how-it-works" className="how-it-works">
+        <h2>Como funciona?</h2>
+        <div className="steps">
+          <div className="step">
+            <span className="step-number">1</span>
+            <h3>Encontre uma Escola</h3>
+            <p>Veja unidades próximas com vagas abertas no EJA.</p>
+          </div>
+
+          <div className="step">
+            <span className="step-number">2</span>
+            <h3>Consulte as Vagas</h3>
+            <p>Acompanhe horários, modalidades e disponibilidade.</p>
+          </div>
+
+          <div className="step">
+            <span className="step-number">3</span>
+            <h3>Faça sua Matrícula</h3>
+            <p>Preencha seus dados e garanta sua vaga em poucos minutos.</p>
+          </div>
         </div>
       </section>
 
       {/* IMPORTÂNCIA */}
-      <section className="importance">
+      <section id="importance" className="importance">
         <div className="importance-content">
           <div className="text">
-            <h2>Por que o EJA é tão importante?</h2>
+            <h2>Por que voltar a estudar?</h2>
             <p>
-              O EJA dá uma nova chance a quem precisou interromper os estudos,
-              promovendo autonomia e novas oportunidades de trabalho e renda.
+              O EJA é a porta para novas oportunidades de trabalho, renda e
+              autonomia. Com o AcelerEJA, você encontra vagas facilmente.
             </p>
             <p className="highlight">
-              O AcelerEJA nasceu para tornar esse caminho mais simples e
-              acessível — porque aprender é poder recomeçar.
+              Educação muda vidas — e seu recomeço pode começar hoje.
             </p>
           </div>
           <div className="image">
@@ -74,26 +92,44 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FUNCIONALIDADES */}
-      <section className="features">
-        <h2>O que você pode fazer aqui</h2>
-        <div className="grid">
-          {features.map(({ icon, title, text }) => (
-            <div key={title} className="card">
-              <h3>
-                {icon} {title}
-              </h3>
-              <p>{text}</p>
-            </div>
-          ))}
+      {/* BENEFÍCIOS */}
+      <section id="benefits" className="benefits">
+        <h2>Por que usar o AcelerEJA?</h2>
+
+        <div className="benefits-grid">
+          <div className="benefit-card">📍 Escolas perto de você</div>
+          <div className="benefit-card">⚡ Matrícula rápida e digital</div>
+          <div className="benefit-card">📚 Modalidades flexíveis</div>
+          <div className="benefit-card">🔍 Acompanhamento fácil</div>
+        </div>
+      </section>
+
+      {/* NÚMEROS */}
+      <section id="stats" className="stats">
+        <h2>O impacto do EJA</h2>
+        <div className="stats-grid">
+          <div className="stat">
+            <h3>+3 Milhões</h3>
+            <p>de brasileiros buscam concluir os estudos</p>
+          </div>
+
+          <div className="stat">
+            <h3>+900 Mil</h3>
+            <p>matrículas no EJA por ano</p>
+          </div>
+
+          <div className="stat">
+            <h3>100% Gratuito</h3>
+            <p>todo o processo através do AcelerEJA</p>
+          </div>
         </div>
       </section>
 
       {/* CTA FINAL */}
-      <section className="final-cta">
-        <h2>Seu futuro começa agora. Vamos juntos?</h2>
-        <button className="cta-btn large" onClick={() => navigate("/register")}>
-          Acelerar minha jornada
+      <section id="final-cta" className="final-cta">
+        <h2>Vamos transformar seu futuro?</h2>
+        <button className="cta-btn large" onClick={() => navigate("/login")}>
+          Começar agora
         </button>
       </section>
     </main>

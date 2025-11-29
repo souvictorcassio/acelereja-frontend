@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import "../styles/Navbar.css";
+import logo from "../assets/AcelerEJA-logo.png";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -15,7 +16,12 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-      <div className="logo">AcelerEJA</div>
+      {/* Logo como imagem */}
+      <div className="logo">
+        <Link to="/">
+          <img src={logo} alt="AcelerEJA Logo" className="logo-img" />
+        </Link>
+      </div>
 
       <div className={`nav-links ${open ? "open" : ""}`}>
         <Link to="/">Início</Link>

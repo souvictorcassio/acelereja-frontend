@@ -62,6 +62,12 @@
   border-radius: 2px;
 }
 
+.logo-img {
+  height: 40px;
+  width: auto;
+  cursor: pointer;
+}
+
 @media (max-width: 768px) {
   .nav-links {
     display: none;
@@ -81,5 +87,11 @@
 
   .hamburger {
     display: flex;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo-img {
+    height: 32px;
   }
 }
